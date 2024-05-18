@@ -22,7 +22,6 @@ const RankingCardItem: FC<Iprops> = ({ itemData, itemClick }) => {
     (state) => state.topList.listDetial.id,
     shallowEqual
   )
-  console.log(activeid)
   return (
     <RankingCardWrapper>
       <div

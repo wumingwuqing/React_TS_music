@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 //数字处理
 export function formatCount(count: number) {
   if (count > 100000) {
@@ -22,4 +23,9 @@ export function formatTime(time: number) {
   const formatMinue = String(minue).padStart(2, '0') // minue > 9 ? minue : `0${minue}`
   const formatSecond = second > 9 ? second : `0${second}`
   return `${formatMinue}:${formatSecond}`
+}
+//时间戳转换
+export function formatDate(time: number, format = 'YYYY-MM-DD') {
+  const date = dayjs(time).format(format)
+  return date
 }

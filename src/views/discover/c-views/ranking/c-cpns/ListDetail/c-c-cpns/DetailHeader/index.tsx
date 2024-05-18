@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import type { FC, ReactNode } from 'react'
 import { DetailHeaderWrapper } from './style'
 import { getImageSize } from '@/utils/format'
+import Operator from '@/components/Operator'
 
 interface Iprops {
   children?: ReactNode
@@ -19,10 +20,10 @@ const DetailHeader: FC<Iprops> = ({
   coverImgUrl,
   subscribedCount
 }) => {
-  function handlePlayClick(id: any): void {
-    throw new Error('Function not implemented.')
+  function handlePlayClick(): void {
+    console.log('asdfaskdl')
   }
-
+  const operatorData = { commentCount, shareCount, subscribedCount }
   return (
     <DetailHeaderWrapper>
       <div className="detail-left">
@@ -33,27 +34,7 @@ const DetailHeader: FC<Iprops> = ({
         <div className="detail-info">
           <h2 className="detail-name">{name}</h2>
         </div>
-        <div className="detail-operator">
-          <div
-            className="sprite_button btn play"
-            onClick={(e) => handlePlayClick(1)}
-          >
-            <span>播放</span>
-          </div>
-          <div className="sprite_button btn add"></div>
-          <div className="sprite_button btn favor">
-            <span>收藏</span>
-          </div>
-          <div className="sprite_button btn share">
-            <span>分享</span>
-          </div>
-          <div className="sprite_button btn download">
-            <span>下载</span>
-          </div>
-          <div className="sprite_button btn comment">
-            <span>评论</span>
-          </div>
-        </div>
+        <Operator playClick={handlePlayClick} operatorData={operatorData} />
       </div>
     </DetailHeaderWrapper>
   )

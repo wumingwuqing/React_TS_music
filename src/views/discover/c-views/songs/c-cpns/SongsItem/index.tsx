@@ -2,6 +2,9 @@ import React, { memo } from 'react'
 import type { FC, ReactNode } from 'react'
 import { ItemWrapper } from './style'
 import { formatCount, getImageSize } from '@/utils/format'
+import { Link, useNavigate } from 'react-router-dom'
+import { fetchSongsDetailAction } from '@/views/songs-detail/store/songs-detail'
+import { useAppDispatch } from '@/store'
 
 interface Iprops {
   children?: ReactNode
@@ -10,8 +13,14 @@ interface Iprops {
 
 const SongsHeader: FC<Iprops> = (props) => {
   const { itemData } = props
+  const navigate = useNavigate()
+  const dispatch = useAppDispatch()
+  function handleClick(id: number) {
+    dispatch(fetchSongsDetailAction(id))
+    navigate(`/discover/songsdetail`)
+  }
   return (
-    <ItemWrapper>
+    <ItemWrapper onClick={() => handleClick(itemData.id)}>
       <div className="top">
         <img src={getImageSize(itemData.coverImgUrl, 140)} alt="" />
         <div className="cover sprite_cover">

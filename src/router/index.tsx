@@ -9,6 +9,7 @@ const Djradio = lazy(() => import('@/views/discover/c-views/djradio'))
 const Ranking = lazy(() => import('@/views/discover/c-views/ranking'))
 const Recommend = lazy(() => import('@/views/discover/c-views/recommend'))
 const Songs = lazy(() => import('@/views/discover/c-views/songs'))
+const SongsDetail = lazy(() => import('@/views/songs-detail'))
 
 const Mine = lazy(() => import('@/views/mine'))
 const Focus = lazy(() => import('@/views/focus'))
@@ -56,6 +57,10 @@ const routes: RouteObject[] = [
       {
         path: '/discover/player',
         element: <Player />
+      },
+      {
+        path: '/discover/songsdetail',
+        element: <SongsDetail />
       }
     ]
   },

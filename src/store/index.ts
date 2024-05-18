@@ -8,7 +8,7 @@ import playerReducer from '@/views/player/store/player'
 import playListReducer from '@/views/play-list/store/service'
 import TopListReducer from '@/views/discover/c-views/ranking/store/ranking'
 import SongsReducer from '@/views/discover/c-views/songs/store/songs'
-
+import SongsDetailReducer from '@/views/songs-detail/store/songs-detail'
 const store = configureStore({
   reducer: {
     // Add your reducers here
@@ -16,7 +16,8 @@ const store = configureStore({
     player: playerReducer,
     playList: playListReducer,
     topList: TopListReducer,
-    songs: SongsReducer
+    songs: SongsReducer,
+    songsDetail: SongsDetailReducer
   }
 })
 
