@@ -15,6 +15,7 @@ export const DetailWrapper = styled.div`
     > .right {
       margin-left: 1px;
       width: 270px;
+      padding: 20px 40px 40px 30px;
     }
   }
 `

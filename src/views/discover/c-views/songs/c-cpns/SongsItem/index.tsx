@@ -3,7 +3,10 @@ import type { FC, ReactNode } from 'react'
 import { ItemWrapper } from './style'
 import { formatCount, getImageSize } from '@/utils/format'
 import { Link, useNavigate } from 'react-router-dom'
-import { fetchSongsDetailAction } from '@/views/songs-detail/store/songs-detail'
+import {
+  fetchRelatedSongsAction,
+  fetchSongsDetailAction
+} from '@/views/songs-detail/store/songs-detail'
 import { useAppDispatch } from '@/store'
 
 interface Iprops {
@@ -17,6 +20,7 @@ const SongsHeader: FC<Iprops> = (props) => {
   const dispatch = useAppDispatch()
   function handleClick(id: number) {
     dispatch(fetchSongsDetailAction(id))
+    dispatch(fetchRelatedSongsAction(id))
     navigate(`/discover/songsdetail`)
   }
   return (

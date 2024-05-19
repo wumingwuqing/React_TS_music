@@ -19,6 +19,7 @@ const DetailContent: FC<Iprops> = ({ itemdata, trackCount, playCount }) => {
         trackCount={trackCount}
         isRenderAlbum={true}
       />
+      <div className="download-app">查看更多内容，请下载客户端</div>
     </ContentWrapper>
   )
 }

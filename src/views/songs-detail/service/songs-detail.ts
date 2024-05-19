@@ -8,4 +8,13 @@ export function getSongsDetail(id: number) {
   })
 }
 
+export function getRelatedSongs(id: number) {
+  return request.get({
+    url: '/related/playlist',
+    params: {
+      id
+    }
+  })
+}
+
 export default {}

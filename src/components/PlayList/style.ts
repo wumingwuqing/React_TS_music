@@ -28,6 +28,7 @@ export const PlayListWrapper = styled.div`
       text-align: left;
       thead {
         height: 36px;
+        color: #999;
         tr {
           th {
             background-position: 0 0;
@@ -37,11 +38,14 @@ export const PlayListWrapper = styled.div`
             padding: 8px 10px;
             background-position: 0 -56px;
           }
+          .order {
+            width: 74px;
+          }
           .time {
             width: 91px;
           }
           .singer {
-            width: 174px;
+            width: 91px;
           }
         }
       }
@@ -57,68 +61,60 @@ export const PlayListWrapper = styled.div`
           }
           .order {
             text-align: center;
-            .letter {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .num {
+              margin-left: 5px;
+              color: #999;
+              line-height: 18px;
+            }
+            .icon {
+              cursor: pointer;
               display: inline-block;
-              width: 16px;
+              width: 17px;
               height: 17px;
-              margin-left: 10px;
-              margin-right: -20px;
-              margin-bottom: -5px;
-              background-position: -67px -283px;
+              background-position: 0 -103px;
+              margin-right: 5px;
+              &:hover {
+                background-position: 0 -128px;
+              }
             }
           }
           .title {
             white-space: nowrap;
             .f-cb {
-              .tt {
-                float: left;
-                width: 100%;
-                .ttc {
-                  height: 18px;
-                  margin-right: 20px;
-                  .name {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    width: 99%;
-                    display: inline-block;
-                    display: flex;
-                    align-items: center;
-                    justify-content: left;
-                    .pic {
-                      display: inline-block;
-                      height: 50px;
-                      width: 50px;
-                      margin-right: 10px;
-                      cursor: pointer;
-                      img {
-                        width: 100%;
-                        height: 100%;
-                      }
-                    }
-                    .icon {
-                      cursor: pointer;
-                      display: inline-block;
-                      width: 17px;
-                      height: 17px;
-                      background-position: 0 -103px;
-                      margin-right: 5px;
-                      &:hover {
-                        background-position: 0 -128px;
-                      }
-                    }
-                    .text {
-                      margin-top: 3px;
-                      cursor: pointer;
-                    }
-                    .alia {
-                      color: #aeaeae;
-                      margin-top: 3px;
-                      white-space: nowrap;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                    }
+              float: left;
+              width: 100%;
+              margin-right: 20px;
+              .name {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 99%;
+                display: inline-block;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                .pic {
+                  display: inline-block;
+                  height: 50px;
+                  width: 50px;
+                  margin-right: 10px;
+                  cursor: pointer;
+                  img {
+                    width: 100%;
+                    height: 100%;
                   }
+                }
+
+                .text {
+                  margin-left: 5px;
+                  margin-top: 3px;
+                  cursor: pointer;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
                 }
               }
             }
@@ -176,10 +172,19 @@ export const PlayListWrapper = styled.div`
             }
           }
           .singer {
-            width: 153px;
+            /* width: 71px; */
             padding: 6px 10px;
             .name {
-              width: 154px;
+              /* width: 71px; */
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+          .album {
+            /* width: 100%; */
+            .text {
+              /* width: 100%; */
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;

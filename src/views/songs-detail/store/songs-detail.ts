@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { getSongsDetail } from '../service/songs-detail'
+import { getRelatedSongs, getSongsDetail } from '../service/songs-detail'
 import { IStateType } from '@/store'
 
 export const fetchSongsDetailAction = createAsyncThunk<
@@ -8,8 +8,17 @@ export const fetchSongsDetailAction = createAsyncThunk<
   { state: IStateType }
 >('playlist', async (id, { dispatch }) => {
   const res = await getSongsDetail(id)
-
   dispatch(setSongsDetail(res.playlist))
+})
+
+export const fetchRelatedSongsAction = createAsyncThunk<
+  void,
+  number,
+  { state: IStateType }
+>('playlist', async (id, { dispatch }) => {
+  const res = await getRelatedSongs(id)
+  console.log(res.playlists)
+  dispatch(setRelatedSongs(res.playlists))
 })
 const songsDetailSlice = createSlice({
   name: 'songsDetail',
@@ -2738,13 +2747,68 @@ const songsDetailSlice = createSlice({
       trialMode: 13,
       displayTags: null,
       playlistType: 'UGC'
-    }
+    },
+    relatedSongs: [
+      {
+        creator: {
+          userId: '129593031',
+          nickname: 'mayuko然'
+        },
+        coverImgUrl:
+          'http://p1.music.126.net/CGqadcEvUW_59LXcuS43aw==/109951162819954007.jpg',
+        name: '将回忆酿成烈酒入喉 从此不再挽留不再回头',
+        id: '531321323'
+      },
+      {
+        creator: {
+          userId: '554491537',
+          nickname: '宇宙无敌超级牛的...'
+        },
+        coverImgUrl:
+          'http://p1.music.126.net/ljxT6mYRLTb2-VjJZXx5Eg==/109951169169660227.jpg',
+        name: '国产说唱 | 你的中文说唱旋律精选',
+        id: '8501280190'
+      },
+      {
+        creator: {
+          userId: '330932370',
+          nickname: '迟到情书'
+        },
+        coverImgUrl:
+          'http://p1.music.126.net/t5lalcY7dQq2dhcXB3EtVA==/109951163434572045.jpg',
+        name: '欧美 | 前奏跪 × 开口脆',
+        id: '814812699'
+      },
+      {
+        creator: {
+          userId: '1407747620',
+          nickname: '小攀哟'
+        },
+        coverImgUrl:
+          'http://p1.music.126.net/lRE0QHTUkA_DxlB14uzSqg==/109951164207703933.jpg',
+        name: '超好听的神仙翻唱',
+        id: '2153548870'
+      },
+      {
+        creator: {
+          userId: '362150970',
+          nickname: '你笑的样子格外迷...'
+        },
+        coverImgUrl:
+          'http://p1.music.126.net/HDwLd_yXK0wUBzpbtLPagg==/109951163508894004.jpg',
+        name: '她没那么喜欢你，只是刚好遇见你',
+        id: '510529769'
+      }
+    ]
   },
   reducers: {
     setSongsDetail(state, { payload }) {
       state.songsDetail = payload
+    },
+    setRelatedSongs(state, { payload }) {
+      state.relatedSongs = payload
     }
   }
 })
-export const { setSongsDetail } = songsDetailSlice.actions
+export const { setSongsDetail, setRelatedSongs } = songsDetailSlice.actions
 export default songsDetailSlice.reducer

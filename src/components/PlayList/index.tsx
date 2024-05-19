@@ -19,8 +19,7 @@ const PlayList: FC<Iprops> = ({
   itemdata,
   trackCount,
   playCount,
-  isRenderAlbum,
-  isRenderNew
+  isRenderAlbum
 }) => {
   const dispatch = useAppDispatch()
   function handlePlayClick(id: number) {
@@ -31,7 +30,6 @@ const PlayList: FC<Iprops> = ({
     dispatch(fetchCurrentSongAction(id))
     navigate(`/discover/player`)
   }
-  console.log(itemdata)
   return (
     <PlayListWrapper>
       <div className="play-list-header">
@@ -67,39 +65,22 @@ const PlayList: FC<Iprops> = ({
               return (
                 <tr key={item.id}>
                   <td className="order ">
-                    <span className="num">{index + 1}</span>
-                    {isRenderNew && (
-                      <span className="letter sprite_icon2"></span>
-                    )}
+                    <div className="num">{index + 1}</div>
+                    <div
+                      className="icon sprite_table"
+                      onClick={() => handlePlayClick(item.id)}
+                    ></div>
                   </td>
                   <td className="title ">
                     <div className="f-cb">
-                      <div className="tt">
-                        <div className="ttc">
-                          <span className="name">
-                            {/* {index < 3 && (
-                              <span className="pic">
-                                <img src={item.al.picUrl} alt="" />
-                              </span>
-                            )} */}
-                            <span
-                              className="icon sprite_table"
-                              onClick={() => handlePlayClick(item.id)}
-                            ></span>
-                            <a
-                              className="text"
-                              onClick={() => handNameClick(item.id)}
-                            >
-                              {item.name}
-                            </a>
-                            {(item.tns || item.alia[0]) && (
-                              <span className="alia">
-                                &nbsp;-&nbsp;( {item.tns || item.alia[0]})
-                              </span>
-                            )}
-                          </span>
-                        </div>
-                      </div>
+                      <span className="name">
+                        <a
+                          className="text"
+                          onClick={() => handNameClick(item.id)}
+                        >
+                          {item.name}
+                        </a>
+                      </span>
                     </div>
                   </td>
                   <td className="time ">
@@ -117,7 +98,11 @@ const PlayList: FC<Iprops> = ({
                       {item.ar[1] && '/' + item.ar[1].name}
                     </div>
                   </td>
-                  {isRenderAlbum && <td className="album ">{item.al.name}</td>}
+                  {isRenderAlbum && (
+                    <td className="album ">
+                      <div className="text">{item.al.name}</div>
+                    </td>
+                  )}
                 </tr>
               )
             })}

@@ -4,16 +4,20 @@ import { DetailWrapper } from './style'
 import { useAppSelector } from '@/store'
 import { shallowEqual } from 'react-redux'
 import DetailHeader from './c-cpns/DetailHeader'
-import PlayList from '@/components/PlayList'
 import DetailContent from './c-cpns/DetailContent'
+import LovePeople from './c-cpns/LovePeople'
+import RelatedSongs from './c-cpns/RelatedSongs'
 
 interface Iprops {
   children?: ReactNode
 }
 
 const SongsDetail: FC<Iprops> = () => {
-  const songsDetail = useAppSelector(
-    (state) => state.songsDetail.songsDetail,
+  const { songsDetail, relatedSongs } = useAppSelector(
+    (state) => ({
+      songsDetail: state.songsDetail.songsDetail,
+      relatedSongs: state.songsDetail.relatedSongs
+    }),
     shallowEqual
   )
   const headerData = {
@@ -32,19 +36,22 @@ const SongsDetail: FC<Iprops> = () => {
       commentCount: songsDetail.commentCount
     }
   }
-  console.log(songsDetail)
+
   return (
     <DetailWrapper>
       <div className="content wrap-v2">
         <div className="left">
           <DetailHeader headerData={headerData} />
           <DetailContent
-            itemdata={songsDetail.tracks || []}
-            playCount={songsDetail.playCount || 0}
-            trackCount={songsDetail.trackCount || 0}
+            itemdata={songsDetail?.tracks || []}
+            playCount={songsDetail?.playCount || 0}
+            trackCount={songsDetail?.trackCount || 0}
           />
         </div>
-        <div className="right"></div>
+        <div className="right">
+          <LovePeople peopleList={songsDetail?.subscribers || []} />
+          <RelatedSongs relatedSongs={relatedSongs || []} />
+        </div>
       </div>
     </DetailWrapper>
   )

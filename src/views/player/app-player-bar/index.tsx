@@ -44,27 +44,27 @@ const AppPlayBar: FC<Iprops> = () => {
   //组件内的副作用操作
   useEffect(() => {
     audioRef.current!.src = getSongPlayUrl(currentSong.id)
-    // setIsPlaying(true)
-    // //1.播放音乐
-    // audioRef.current
-    //   ?.play()
-    //   .then(() => {
-    //     console.log('singing')
-    //   })
-    //   .catch((error) => {
-    //     if (
-    //       'NotSupportedError: Failed to load because no supported source was found.' ===
-    //       error.toString()
-    //     ) {
-    //       //展示歌词
-    //       const config = {
-    //         className: 'message',
-    //         content: '歌曲无法播放!',
-    //         duration: 2
-    //       }
-    //       message.open(config)
-    //     }
-    //   })
+    setIsPlaying(true)
+    //1.播放音乐
+    audioRef.current
+      ?.play()
+      .then(() => {
+        console.log('singing')
+      })
+      .catch((error) => {
+        if (
+          'NotSupportedError: Failed to load because no supported source was found.' ===
+          error.toString()
+        ) {
+          //展示歌词
+          const config = {
+            className: 'message',
+            content: '歌曲无法播放!',
+            duration: 2
+          }
+          message.open(config)
+        }
+      })
     //记录总时间
     setDuration(currentSong.dt)
   }, [currentSong])
