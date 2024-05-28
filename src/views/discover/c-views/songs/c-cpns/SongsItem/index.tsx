@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import {
   fetchRelatedSongsAction,
   fetchSongsDetailAction
-} from '@/views/songs-detail/store/songs-detail'
+} from '@/views/detail/songs-detail/store/songs-detail'
 import { useAppDispatch } from '@/store'
 
 interface Iprops {

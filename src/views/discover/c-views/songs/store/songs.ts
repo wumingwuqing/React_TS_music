@@ -6,7 +6,6 @@ export const fetchCatlistDataAction = createAsyncThunk(
   'catlist',
   async (arg, { dispatch }) => {
     const res = await getCatlist()
-
     dispatch(setCatlistAction({ categories: res.categories, sub: res.sub }))
   }
 )

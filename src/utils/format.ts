@@ -7,6 +7,9 @@ export function formatCount(count: number) {
     return count
   }
 }
+export function formatCountV1(count: number) {
+  return count < 10 ? '0' + count : count
+}
 //获取合适大小的图片
 export function getImageSize(
   imageUrl: string,

@@ -6,7 +6,7 @@ export const fetchSongsDetailAction = createAsyncThunk<
   void,
   number,
   { state: IStateType }
->('playlist', async (id, { dispatch }) => {
+>('SongsDetail', async (id, { dispatch }) => {
   const res = await getSongsDetail(id)
   dispatch(setSongsDetail(res.playlist))
 })
@@ -15,7 +15,7 @@ export const fetchRelatedSongsAction = createAsyncThunk<
   void,
   number,
   { state: IStateType }
->('playlist', async (id, { dispatch }) => {
+>('RelatedSongs', async (id, { dispatch }) => {
   const res = await getRelatedSongs(id)
   console.log(res.playlists)
   dispatch(setRelatedSongs(res.playlists))

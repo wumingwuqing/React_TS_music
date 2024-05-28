@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import type { FC, ReactNode } from 'react'
-import { DetailWrapper } from './style'
+import { SongsDetailWrapper } from './style'
 import { useAppSelector } from '@/store'
 import { shallowEqual } from 'react-redux'
 import DetailHeader from './c-cpns/DetailHeader'
@@ -38,7 +38,7 @@ const SongsDetail: FC<Iprops> = () => {
   }
 
   return (
-    <DetailWrapper>
+    <SongsDetailWrapper>
       <div className="content wrap-v2">
         <div className="left">
           <DetailHeader headerData={headerData} />
@@ -53,7 +53,7 @@ const SongsDetail: FC<Iprops> = () => {
           <RelatedSongs relatedSongs={relatedSongs || []} />
         </div>
       </div>
-    </DetailWrapper>
+    </SongsDetailWrapper>
   )
 }
 

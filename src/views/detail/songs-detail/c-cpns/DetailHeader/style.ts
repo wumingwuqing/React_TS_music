@@ -5,8 +5,13 @@ export const HeaderWrapper = styled.div`
     .avatar {
       position: relative;
       width: 200px;
+      height: 200px;
       float: left;
       margin: 0 -220px 0 0;
+      img {
+        width: 100%;
+        height: 100%;
+      }
       .msk {
         position: absolute;
         width: 208px;
