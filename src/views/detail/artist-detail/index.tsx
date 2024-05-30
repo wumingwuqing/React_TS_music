@@ -31,7 +31,7 @@ const ArtistDetail: FC<Iprops> = () => {
     <ArtistDetailWrapper>
       <div className="content  wrap-v2">
         <div className="left">
-          <DetailLeft />
+          <DetailLeft id={Number(id)} />
         </div>
         <div className="right"></div>
       </div>

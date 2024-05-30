@@ -198,65 +198,31 @@ export type IArtistAblumType = Array<{
   isSub: boolean
 }>
 export type IArtistMVType = Array<{
-  songs: Array<any>
-  paid: boolean
-  onSale: boolean
-  mark: number
-  awardTags: any
-  artists: Array<{
-    img1v1Id: number
-    topicPerson: number
-    picId: number
-    briefDesc: string
-    musicSize: number
-    albumSize: number
-    picUrl: string
-    img1v1Url: string
-    followed: boolean
-    trans: string
-    alias: Array<any>
-    name: string
-    id: number
-    img1v1Id_str: string
-  }>
-  copyrightId: number
-  picId: number
+  id: number
+  name: string
+  status: number
+  imgurl: string
+  artistName: string
   artist: {
     img1v1Id: number
     topicPerson: number
-    picId: number
+    alias: Array<any>
     briefDesc: string
-    musicSize: number
-    albumSize: number
     picUrl: string
     img1v1Url: string
-    followed: boolean
+    albumSize: number
     trans: string
-    alias: Array<string>
+    musicSize: number
+    picId: number
     name: string
     id: number
-    picId_str: string
     img1v1Id_str: string
   }
-  publishTime: number
-  company: string
-  briefDesc: string
-  picUrl: string
-  commentThreadId: string
-  blurPicUrl: string
-  companyId: number
-  pic: number
-  status: number
-  subType: string
-  alias: Array<string>
-  description: string
-  tags: string
-  name: string
-  id: number
-  type: string
-  size: number
-  picId_str: string
-  isSub: boolean
+  imgurl16v9: string
+  duration: number
+  playCount: number
+  publishTime: string
+  subed: boolean
 }>
 export type ISimiarArtistType = any
 export type IArtistDetailState = {

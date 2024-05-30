@@ -66,5 +66,10 @@ export const LeftWrapper = styled.div`
         }
       }
     }
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
   }
 `

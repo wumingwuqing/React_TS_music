@@ -1,10 +1,9 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { memo, useState } from 'react'
 import type { FC, ReactNode } from 'react'
 import { ProgramWrapper } from './style'
 import { formatDate, formatTime } from '@/utils/format'
 import { useAppDispatch } from '@/store'
 import { fetchCurrentSongAction } from '@/views/player/store/player'
-import { fetchDjRadioListDataAction } from '@/views/discover/c-views/djradio/store/djradio'
 import { Pagination, PaginationProps, message } from 'antd'
 import { fetchRadioProgramDataAction } from '../../store/djradio-detail'
 
