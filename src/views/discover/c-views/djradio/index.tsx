@@ -50,6 +50,7 @@ const Djradio: FC<Iprops> = () => {
       navigate('/discover/djradiodetail')
     }
   }
+  // 根据当前分类id判断是否显示推荐节目和节目排行榜
   function reanderSwitch(currentCategory: number) {
     if (currentCategoryId < 0) {
       return (

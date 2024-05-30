@@ -10,7 +10,7 @@ export const AlbumListWrapper = styled.div`
       width: 145px;
       height: 175px;
       padding: 0 0 30px 18px;
-      .img {
+      .image {
         position: relative;
         width: 120px;
         height: 120px;

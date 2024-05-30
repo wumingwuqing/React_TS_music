@@ -43,7 +43,7 @@ const SongList: FC<Iprops> = ({ totalCount, id }) => {
         {artistAblum.map((item) => {
           return (
             <li key={item.id}>
-              <div className="img">
+              <div className="image">
                 <img src={getImageSize(item.picUrl, 120)} alt="" />
                 <span className="cover sprite_cover">
                   <i className="icon sprite_icon"></i>

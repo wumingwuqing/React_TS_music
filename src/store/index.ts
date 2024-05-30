@@ -13,6 +13,8 @@ import djradioReducer from '@/views/discover/c-views/djradio/store/djradio'
 import radioDetailReducer from '@/views/detail/djradio-detail/store/djradio-detail'
 import artistReducer from '@/views/discover/c-views/artist/store/artist'
 import artistDetailReducer from '@/views/detail/artist-detail/store/artist-detail'
+import ablumReducer from '@/views/discover/c-views/album/store/album'
+import albumDetailReducer from '@/views/detail/album-detail/store/album-detail'
 const store = configureStore({
   reducer: {
     // Add your reducers here
@@ -25,7 +27,9 @@ const store = configureStore({
     djradio: djradioReducer,
     radioDetail: radioDetailReducer,
     artist: artistReducer,
-    artistDetail: artistDetailReducer
+    artistDetail: artistDetailReducer,
+    album: ablumReducer,
+    albumDetail: albumDetailReducer
   }
 })
 

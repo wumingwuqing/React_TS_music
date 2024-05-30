@@ -39,7 +39,6 @@ const SongList: FC<Iprops> = ({ totalCount, id }) => {
     return originalElement
   }
 
-  console.log(artistMV)
   return (
     <MVListWrapper>
       <ul className="content-list">

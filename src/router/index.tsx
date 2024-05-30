@@ -12,6 +12,7 @@ const Songs = lazy(() => import('@/views/discover/c-views/songs'))
 const SongsDetail = lazy(() => import('@/views/detail/songs-detail'))
 const DjradioDetail = lazy(() => import('@/views/detail/djradio-detail'))
 const ArtistDetail = lazy(() => import('@/views/detail/artist-detail'))
+const AblumDetail = lazy(() => import('@/views/detail/album-detail'))
 const Mine = lazy(() => import('@/views/mine'))
 const Focus = lazy(() => import('@/views/focus'))
 const Download = lazy(() => import('@/views/download'))
@@ -70,6 +71,10 @@ const routes: RouteObject[] = [
       {
         path: '/discover/artistdetail/:id',
         element: <ArtistDetail />
+      },
+      {
+        path: '/discover/albumdetail/:id',
+        element: <AblumDetail />
       }
     ]
   },
