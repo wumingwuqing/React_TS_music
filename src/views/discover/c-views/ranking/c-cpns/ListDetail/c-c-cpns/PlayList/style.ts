@@ -40,7 +40,7 @@ export const PlayListWrapper = styled.div`
           .time {
             width: 91px;
           }
-          .singer {
+          .artist {
             width: 174px;
           }
         }
@@ -167,7 +167,7 @@ export const PlayListWrapper = styled.div`
               display: flex;
             }
           }
-          .singer {
+          .artist {
             width: 153px;
             padding: 6px 10px;
             .name {
@@ -175,6 +175,10 @@ export const PlayListWrapper = styled.div`
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
+              > span:hover {
+                cursor: pointer;
+                text-decoration: underline;
+              }
             }
           }
         }

@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 interface Iprops {
   children?: ReactNode
   itemdata: any[]
-  playCount: number
+  playCount?: number
   trackCount: number
   isRenderAlbum?: boolean
   isRenderNew?: boolean
@@ -35,9 +35,11 @@ const PlayList: FC<Iprops> = ({
       <div className="play-list-header">
         <h3>歌曲列表</h3>
         <div className="track-count">{trackCount}首歌</div>
-        <div className="play-count">
-          播放：<span>{playCount}次</span>
-        </div>
+        {playCount && (
+          <div className="play-count">
+            播放：<span>{playCount}次</span>
+          </div>
+        )}
       </div>
       <div className="play-list-content">
         <table>
@@ -50,7 +52,7 @@ const PlayList: FC<Iprops> = ({
               <th className="time sprite_table">
                 <div className="wp sprite_table">时长</div>
               </th>
-              <th className="singer sprite_table">
+              <th className="artist sprite_table">
                 <div className="wp sprite_table">歌手</div>
               </th>
               {isRenderAlbum && (

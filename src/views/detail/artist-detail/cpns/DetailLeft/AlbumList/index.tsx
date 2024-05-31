@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '@/store'
 import { formatDate, getImageSize } from '@/utils/format'
 import { Pagination, PaginationProps, message } from 'antd'
 import { fetchArtistsAblumDataAction } from '../../../store/artist-detail'
+import { useNavigate } from 'react-router-dom'
 
 interface Iprops {
   children?: ReactNode
@@ -37,12 +38,18 @@ const SongList: FC<Iprops> = ({ totalCount, id }) => {
     }
     return originalElement
   }
+  //点击事件
+  const navigate = useNavigate()
+  // 点击后进入专辑详情页面
+  function handleClick(id: number) {
+    navigate(`/discover/albumdetail/${id}`)
+  }
   return (
     <AlbumListWrapper>
       <ul>
         {artistAblum.map((item) => {
           return (
-            <li key={item.id}>
+            <li key={item.id} onClick={() => handleClick(item.id)}>
               <div className="image">
                 <img src={getImageSize(item.picUrl, 120)} alt="" />
                 <span className="cover sprite_cover">

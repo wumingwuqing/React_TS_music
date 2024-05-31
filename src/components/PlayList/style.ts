@@ -44,8 +44,8 @@ export const PlayListWrapper = styled.div`
           .time {
             width: 91px;
           }
-          .singer {
-            width: 91px;
+          .artist {
+            width: 100px;
           }
         }
       }

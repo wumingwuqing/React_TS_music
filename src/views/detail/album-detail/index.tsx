@@ -2,9 +2,9 @@ import React, { memo, useEffect } from 'react'
 import type { FC, ReactNode } from 'react'
 import { AlbumDetailWrapper } from './style'
 import { useParams } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '@/store'
+import { useAppDispatch } from '@/store'
 import { fetchAblumDetailDataAction } from './store/album-detail'
-
+import AlbumLeft from './cpns/AlbumLeft'
 interface Iprops {
   children?: ReactNode
 }
@@ -16,11 +16,15 @@ const AlbumDetail: FC<Iprops> = () => {
   useEffect(() => {
     dispatch(fetchAblumDetailDataAction(Number(id)))
   }, [id])
-  const albumDetail = useAppSelector((state) => state.albumDetail.albumDetail)
-  console.log(albumDetail)
+
   return (
     <AlbumDetailWrapper>
-      <h1>AlbumDetail</h1>
+      <div className="content  wrap-v2">
+        <div className="left">
+          <AlbumLeft />
+        </div>
+        <div className="right"></div>
+      </div>
     </AlbumDetailWrapper>
   )
 }

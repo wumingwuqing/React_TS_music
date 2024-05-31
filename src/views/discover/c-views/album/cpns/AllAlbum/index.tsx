@@ -58,15 +58,13 @@ const AllAlbum: FC<Iprops> = ({ callBack }) => {
         </span>
       </h1>
       <ul className="hot-album-list">
-        {allAlbum
-          .filter((item, index) => index < 10)
-          .map((item) => {
-            return (
-              <li key={item.id} className="hot-album-list-item">
-                <AlbumItem itemData={item} />
-              </li>
-            )
-          })}
+        {allAlbum.map((item) => {
+          return (
+            <li key={item.id} className="hot-album-list-item">
+              <AlbumItem itemData={item} />
+            </li>
+          )
+        })}
       </ul>
     </AllAlbumWrapper>
   )

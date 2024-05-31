@@ -18,10 +18,15 @@ const PlayList: FC<Iprops> = ({ itemdata, trackCount, playCount }) => {
   function handlePlayClick(id: number) {
     dispatch(fetchCurrentSongAction(id))
   }
+  //播放
   const navigate = useNavigate()
   function handNameClick(id: number) {
     dispatch(fetchCurrentSongAction(id))
     navigate(`/discover/player`)
+  }
+  //歌手
+  function handleClick(id: number) {
+    navigate(`/discover/artistdetail/${id}`)
   }
   return (
     <PlayListWrapper>
@@ -43,7 +48,7 @@ const PlayList: FC<Iprops> = ({ itemdata, trackCount, playCount }) => {
               <th className="time sprite_table">
                 <div className="wp sprite_table">时长</div>
               </th>
-              <th className="singer sprite_table">
+              <th className="artist sprite_table">
                 <div className="wp sprite_table">歌手</div>
               </th>
             </tr>
@@ -89,10 +94,21 @@ const PlayList: FC<Iprops> = ({ itemdata, trackCount, playCount }) => {
                       <button className="btn download sprite_table"></button>
                     </div>
                   </td>
-                  <td className="singer ">
+                  <td className="artist ">
                     <div className="name">
-                      {item.ar[0].name}
-                      {item.ar[1] && '/' + item.ar[1].name}
+                      {item.ar
+                        .filter((item: any, index: number) => index < 2)
+                        .map((value: any, index: number) => {
+                          console.log(value)
+                          return (
+                            <span key={value.id} className="text">
+                              <span onClick={() => handleClick(value.id)}>
+                                {value.name}
+                              </span>
+                              {index < item?.ar?.length - 1 && <span>/</span>}
+                            </span>
+                          )
+                        })}
                     </div>
                   </td>
                 </tr>

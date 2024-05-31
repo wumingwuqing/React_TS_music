@@ -10,35 +10,34 @@ interface Iprops {
 }
 
 const AlbumItem: FC<Iprops> = ({ itemData }) => {
+  const navigate = useNavigate()
   // 图片和名字点击后进入专辑详情页面
   function handleClick(id: number) {
     navigate(`/discover/albumdetail/${id}`)
   }
 
   //artist点击后跳转歌手页面
-  const navigate = useNavigate()
+
   function handerArtistClick(id: number) {
     navigate(`/discover/artistdetail/${id}`)
   }
   return (
     <AlbumItemWrapper>
-      <div className="image">
-        <div className="img" onClick={() => handleClick(itemData.id)}>
-          <img src={getImageSize(itemData.picUrl, 130)} alt="" />
-          <span className="cover sprite_cover">
-            <i className="icon sprite_icon"></i>
-          </span>
+      <div className="image" onClick={() => handleClick(itemData.id)}>
+        <img src={getImageSize(itemData.picUrl, 130)} alt="" />
+        <span className="cover sprite_cover">
+          <i className="icon sprite_icon"></i>
+        </span>
+      </div>
+      <div className="info">
+        <div className="name" onClick={() => handleClick(itemData.id)}>
+          {itemData.name}
         </div>
-        <div className="info">
-          <div className="name" onClick={() => handleClick(itemData.id)}>
-            {itemData.name}
-          </div>
-          <div
-            className="artist"
-            onClick={() => handerArtistClick(itemData.artist.id)}
-          >
-            {itemData.artist.name}
-          </div>
+        <div
+          className="artist"
+          onClick={() => handerArtistClick(itemData.artist.id)}
+        >
+          {itemData.artist.name}
         </div>
       </div>
     </AlbumItemWrapper>
