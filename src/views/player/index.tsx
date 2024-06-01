@@ -5,12 +5,11 @@ import { shallowEqual } from 'react-redux'
 import { PlayerWrapper } from './style'
 import { useAppDispatch, useAppSelector } from '@/store'
 
-import SongInfo from './c-cpns/song-info'
-import PlayList from './c-cpns/playlist'
-import SimilarSong from './c-cpns/similar-song'
+import SongInfo from './SongDetail/song-info'
+import PlayList from './SongDetail/playlist'
+import SimilarSong from './SongDetail/similar-song'
 
-import { fetchPlayListAction } from '../play-list/store/service'
-import { getSimiSongAction } from './store/player'
+import { fetchPlayListAction, getSimiSongAction } from './store/player'
 
 interface Iprops {
   children?: ReactNode

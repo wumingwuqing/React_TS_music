@@ -28,7 +28,11 @@ const SettleSinger: FC<Iprops> = () => {
       <div className="artists">
         {settleSingers.slice(0, 5).map((item) => {
           return (
-            <a href="#/discover/artist" key={item.id} className="item">
+            <a
+              href={`#/discover/artistdetail/${item.id}`}
+              key={item.id}
+              className="item"
+            >
               <img src={getImageSize(item.picUrl, 62)} alt="" />
               <div className="info">
                 <div className="name">{item.name}</div>

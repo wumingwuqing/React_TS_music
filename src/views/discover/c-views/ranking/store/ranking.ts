@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { getTopList, getTopListDetail } from '../service/ranking'
 import { IStateType } from '@/store'
+import { IReRankingState } from './type'
 
 //网络请求获取数据
 export const fetchTopListDataAction = createAsyncThunk(
-  'ranking',
+  'TopList',
   async (arg, { dispatch }) => {
     const res = await getTopList()
     dispatch(setTopList(res.list))
@@ -14,15 +15,11 @@ export const fetchTopListDetail = createAsyncThunk<
   void,
   number,
   { state: IStateType }
->('ranking', async (id, { dispatch }) => {
+>('TopListDetail', async (id, { dispatch }) => {
   const res = await getTopListDetail(id)
   dispatch(setListDetial(res.playlist))
 })
 //定义Slice
-interface IReRankingState {
-  topList: any[]
-  listDetial: any
-}
 const initialState: IReRankingState = {
   topList: [],
   listDetial: {}

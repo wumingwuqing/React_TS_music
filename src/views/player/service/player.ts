@@ -24,3 +24,12 @@ export function getSimiSong(id: number) {
     }
   })
 }
+
+export function getPlayList(id: number) {
+  return request.get({
+    url: '/simi/playlist',
+    params: {
+      id
+    }
+  })
+}

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const AlbumItemWrapper = styled.div`
+  cursor: pointer;
   .top {
     position: relative;
     width: 118px;
@@ -33,11 +34,17 @@ export const AlbumItemWrapper = styled.div`
     .name {
       color: #000;
       ${(props) => props.theme.mixin.textNowrap}
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     .artist {
       color: #666;
       ${(props) => props.theme.mixin.textNowrap}
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 `

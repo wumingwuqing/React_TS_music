@@ -21,7 +21,7 @@ const RecommendPrograms: FC<Iprops> = ({ itemCallback }) => {
         moreLink="discover/djradio#/discover/djradio"
       />
       <ul className="recommend-content">
-        {djRecommend.map((item) => {
+        {djRecommend?.map((item) => {
           return (
             <li key={item.id} onClick={() => itemCallback(item.id, true)}>
               <div className="recommend-item-left">

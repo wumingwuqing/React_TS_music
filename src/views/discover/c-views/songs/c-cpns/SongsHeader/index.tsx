@@ -23,7 +23,7 @@ const SongsHeader: FC<Iprops> = ({ headerClick }) => {
   function handleOnClick() {
     setIsActive(!isActive)
   }
-
+  //选择tage
   function tageClick(name: string) {
     headerClick(name)
     setIsActive(false)
@@ -42,7 +42,7 @@ const SongsHeader: FC<Iprops> = ({ headerClick }) => {
         </div>
         <div className="right">
           <div className="sprite_button2">
-            <a href="">热门</a>
+            <span>热门</span>
           </div>
         </div>
       </div>

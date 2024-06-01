@@ -131,7 +131,7 @@ const AppPlayBar: FC<Iprops> = () => {
     }
   }
   return (
-    <PlayerBarWrapper className="sprite_playbar">
+    <PlayerBarWrapper className="bar sprite_playbar">
       <div className="content wrap-v2">
         {/* 左边的三个按钮 */}
         <BarControl isplaying={isPlaying ? 1 : 0}>
@@ -195,6 +195,7 @@ const AppPlayBar: FC<Iprops> = () => {
           </div>
         </BarOperator>
       </div>
+
       <audio
         ref={audioRef}
         onTimeUpdate={handleTimeUpdate}

@@ -6,6 +6,7 @@ import {
   getNewAlbum,
   getPlaylistDetail
 } from '../service/recommend'
+import { IRecommendState } from './type'
 //网络请求获取数据
 export const fetchBannerDataAction = createAsyncThunk(
   'banners',
@@ -54,13 +55,6 @@ export const fetchActistsDataAction = createAsyncThunk(
   }
 )
 //定义Slice
-interface IRecommendState {
-  banners: any[]
-  hotRecommends: any[]
-  newAlbums: any[]
-  rankings: any[]
-  settleSingers: any[]
-}
 const initialState: IRecommendState = {
   banners: [],
   hotRecommends: [],

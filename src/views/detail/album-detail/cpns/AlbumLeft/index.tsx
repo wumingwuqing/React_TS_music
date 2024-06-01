@@ -2,8 +2,8 @@ import React, { memo } from 'react'
 import type { FC, ReactNode } from 'react'
 import { LeftContentWrapper } from './style'
 import { useAppSelector } from '@/store'
-import Header from './c-cpns/Header'
-import SongList from './c-cpns/SongList'
+import Header from './Header'
+import SongList from './SongList'
 
 interface Iprops {
   children?: ReactNode

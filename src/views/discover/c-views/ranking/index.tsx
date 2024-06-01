@@ -1,12 +1,12 @@
 import React, { memo, useEffect } from 'react'
 import type { FC, ReactNode } from 'react'
+import { message } from 'antd'
 import { RankingWrapper } from './style'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { fetchTopListDataAction, fetchTopListDetail } from './store/ranking'
 import RankingCard from './c-cpns/RankingCard'
 import ListDetail from './c-cpns/ListDetail'
 import { shallowEqual } from 'react-redux'
-import { message } from 'antd'
 
 interface Iprops {
   children?: ReactNode

@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { getCatlist, getPlaylist } from '../service/songs'
 import { IStateType } from '@/store'
-
+import { ISongsState } from '.'
+//获取数据
 export const fetchCatlistDataAction = createAsyncThunk(
   'catlist',
   async (arg, { dispatch }) => {
@@ -23,15 +24,10 @@ export const fetchPlaylistDataAction = createAsyncThunk<
   dispatch(setPlaylistAction(res))
 })
 //定义slice
-interface ISongsState {
-  catlist: { categories: any; sub: any[] }
-  playlist: any
-}
 const initialState: ISongsState = {
   catlist: { categories: {}, sub: [] },
   playlist: {}
 }
-
 const songsSlice = createSlice({
   name: 'songs',
   initialState,

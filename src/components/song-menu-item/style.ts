@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const MenuItemWrapper = styled.div`
+  cursor: pointer;
   width: 140px;
   margin: 15px 0;
 
@@ -55,5 +56,8 @@ export const MenuItemWrapper = styled.div`
     font-size: 14px;
     color: #000;
     margin-top: 5px;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `

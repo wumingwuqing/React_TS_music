@@ -10,12 +10,11 @@ interface Iprops {
 }
 
 const LovePeople: FC<Iprops> = ({ relatedSongs }) => {
-  console.log(relatedSongs)
   return (
     <RelatedWrapper>
       <AreaHeaderV2 title="相关推荐" />
       <ul className="related">
-        {relatedSongs.map((item) => {
+        {relatedSongs?.map((item) => {
           return (
             <li key={item?.userId} className="list">
               <div className="left">

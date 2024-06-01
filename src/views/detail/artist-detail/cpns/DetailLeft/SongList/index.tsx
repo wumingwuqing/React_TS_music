@@ -10,7 +10,6 @@ interface Iprops {
 
 const SongList: FC<Iprops> = () => {
   const artistsSong = useAppSelector((state) => state.artistDetail.artistsSong)
-  console.log(artistsSong)
   return (
     <SongListWrapper>
       <table>

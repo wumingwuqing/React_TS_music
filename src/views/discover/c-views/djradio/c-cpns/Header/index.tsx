@@ -60,7 +60,7 @@ const DjradioHeader: FC<Iprops> = ({ headerCallback }) => {
           ref={carouselRef}
         >
           <ul>
-            {newDjCatelist[0].map((item, index) => {
+            {newDjCatelist?.[0]?.map((item, index) => {
               return (
                 <li
                   className={classNames('item', {
@@ -83,7 +83,7 @@ const DjradioHeader: FC<Iprops> = ({ headerCallback }) => {
             })}
           </ul>
           <ul>
-            {newDjCatelist[1].map((item, index) => {
+            {newDjCatelist?.[1]?.map((item, index) => {
               return (
                 <li className="item" key={item.id}>
                   <button
@@ -103,7 +103,7 @@ const DjradioHeader: FC<Iprops> = ({ headerCallback }) => {
         </Carousel>
         {/* 指示条 */}
         <div className="dots">
-          {newDjCatelist.map((item, index) => {
+          {newDjCatelist?.map((item, index) => {
             return (
               <span
                 key={index}

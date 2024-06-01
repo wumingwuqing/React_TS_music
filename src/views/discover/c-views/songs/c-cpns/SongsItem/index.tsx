@@ -16,6 +16,7 @@ interface Iprops {
 
 const SongsHeader: FC<Iprops> = (props) => {
   const { itemData } = props
+  //点击去往详情页
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   function handleClick(id: number) {

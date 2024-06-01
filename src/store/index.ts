@@ -5,7 +5,6 @@ import { shallowEqual } from 'react-redux'
 
 import recommendReducer from '@/views/discover/c-views/recommend/store/recommend'
 import playerReducer from '@/views/player/store/player'
-import playListReducer from '@/views/play-list/store/service'
 import TopListReducer from '@/views/discover/c-views/ranking/store/ranking'
 import SongsReducer from '@/views/discover/c-views/songs/store/songs'
 import SongsDetailReducer from '@/views/detail/songs-detail/store/songs-detail'
@@ -20,7 +19,6 @@ const store = configureStore({
     // Add your reducers here
     recommend: recommendReducer,
     player: playerReducer,
-    playList: playListReducer,
     topList: TopListReducer,
     songs: SongsReducer,
     songsDetail: SongsDetailReducer,

@@ -27,6 +27,10 @@ export const DetailHeaderWrapper = styled.div`
     margin-left: 30px;
     .detail-info {
       padding: 20px 0px 40px 0px;
+      .detail-name {
+        font-size: 24px;
+        font-weight: normal;
+      }
     }
     .detail-operator {
       display: flex;

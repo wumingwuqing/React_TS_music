@@ -14,13 +14,14 @@ interface Iprops {
 
 const ProgramsRanking: FC<Iprops> = ({ itemCallback }) => {
   const djRanking = useAppSelector((state) => state.djradio.djRanking)
-
+  //排名升降
   function rankingChange(lastRank: number, rank: number) {
     return Math.abs(lastRank - rank)
   }
-  const score = djRanking[0].score
+  const score = djRanking?.[0]?.score
 
   const dispatch = useAppDispatch()
+  //点击播放
   function handlePlayClick(id: number) {
     dispatch(fetchCurrentSongAction(id))
   }
@@ -32,7 +33,7 @@ const ProgramsRanking: FC<Iprops> = ({ itemCallback }) => {
         moreLink="discover/djradio#/discover/djradio"
       />
       <ul className="programs-content">
-        {djRanking.map((item, index) => {
+        {djRanking?.map((item, index) => {
           return (
             <li
               key={item.program.id}

@@ -5,14 +5,15 @@ export const PlayerBarWrapper = styled.div`
   z-index: 99;
   left: 0;
   right: 0;
-  bottom: -47px;
-  height: 53px;
+  bottom: -45px;
+  transition: bottom 0.2s linear;
+  &:hover {
+    bottom: 0px;
+    transition: bottom 0.2s linear;
+  }
+  height: 52px;
   background-position: 0 0;
   background-repeat: repeat;
-
-  /* transform: translate(-50%, -100%);
-  transition: transform 0.4s; */
-
   .content {
     display: flex;
     align-items: center;
@@ -22,10 +23,6 @@ export const PlayerBarWrapper = styled.div`
     transform: translateX(-50%);
     bottom: 0;
     height: 47px;
-  }
-  &:hover {
-    bottom: 0px;
-    transition: bottom 0.4s;
   }
 `
 interface IBarControl {

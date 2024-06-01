@@ -25,6 +25,7 @@ export const HeaderWrapper = styled.div`
     .info {
       float: left;
       margin-left: 20px;
+
       .title {
         display: flex;
         align-items: center;
@@ -36,6 +37,10 @@ export const HeaderWrapper = styled.div`
           display: inline-block;
         }
         .name {
+          width: 330px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
           margin-left: 10px;
           display: inline-block;
           height: 24px;

@@ -13,6 +13,7 @@ interface Iprops {
 
 const ArtistList: FC<Iprops> = ({ currentCat }) => {
   const artistList = useAppSelector((state) => state.artist.artistList)
+  // 点击去往歌手详情页
   const navigate = useNavigate()
   function handleClick(id: number) {
     navigate(`/discover/artistdetail/${id}`)

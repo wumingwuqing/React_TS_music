@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { getLyric, getSongDetail } from '../service/player'
+import { getLyric, getPlayList, getSongDetail } from '../service/player'
 import { ILyric, parseLyric } from '@/utils/parse-lyric'
 import { IStateType } from '@/store'
 import { getSimiSong } from '../service/player'
@@ -121,6 +121,16 @@ export const getSimiSongAction = createAsyncThunk(
     })
   }
 )
+export const fetchPlayListAction = createAsyncThunk<
+  void,
+  number,
+  { state: IStateType }
+>('setPlayList', (id: number, { dispatch, getState }) => {
+  //获取歌单
+  getPlayList(id).then((res) => {
+    dispatch(setPlayList(res.playlists))
+  })
+})
 //slice
 interface IPlayerState {
   currentSong: any
@@ -133,6 +143,7 @@ interface IPlayerState {
   playMode: number
 
   simiSong: any[]
+  playList: any[]
 }
 const initialState: IPlayerState = {
   currentSong: {},
@@ -142,7 +153,8 @@ const initialState: IPlayerState = {
   playSongIndex: -1,
   playMode: 0, //0顺序 1随机 2单曲循环
 
-  simiSong: []
+  simiSong: [],
+  playList: []
 }
 const playerSlice = createSlice({
   name: 'player',
@@ -168,6 +180,10 @@ const playerSlice = createSlice({
     },
     setSimiSong: (state, action) => {
       state.simiSong = action.payload
+    },
+
+    setPlayList(state, action) {
+      state.playList = action.payload
     }
   }
 })
@@ -179,6 +195,7 @@ export const {
   setPlaySongList,
   setPlaySongIndex,
   setPlayMode,
-  setSimiSong
+  setSimiSong,
+  setPlayList
 } = playerSlice.actions
 export default playerSlice.reducer

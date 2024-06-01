@@ -16,7 +16,7 @@ const OtherInfo: FC<Iprops> = () => {
   //redux中的数据
   const { playList } = useAppSelector(
     (state) => ({
-      playList: state.playList.playList
+      playList: state.player.playList
     }),
     shallowEqualApp
   )

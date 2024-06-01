@@ -13,8 +13,6 @@ import { useAppDispatch } from '@/store'
 //c-cpns
 import TopBanner from './c-cpns/top-banner'
 
-import { RecommendWrapper } from './style'
-
 import HotRecommend from './c-cpns/hot-recommend'
 import NewAlbum from './c-cpns/new-album'
 import TopRanking from './c-cpns/top-ranking'
@@ -22,6 +20,8 @@ import TopRanking from './c-cpns/top-ranking'
 import UserLogin from './c-cpns/user-login'
 import SettleSinger from './c-cpns/settle-singer'
 import HotAnchor from './c-cpns/hot-anchor'
+
+import { RecommendWrapper } from './style'
 
 interface Iprops {
   children?: ReactNode

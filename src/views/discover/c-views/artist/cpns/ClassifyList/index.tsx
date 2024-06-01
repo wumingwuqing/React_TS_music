@@ -25,13 +25,13 @@ const ClassifyList: FC<Iprops> = ({ callback }) => {
   return (
     <ClassifytWrapper>
       <div className="classify-content ">
-        {categories.map((item) => {
+        {categories.map((item: any) => {
           return (
             <div className="item" key={item.title}>
               <h2>{item.title}</h2>
               {
                 <ul>
-                  {item.artists.map((artist) => {
+                  {item.artists.map((artist: any) => {
                     return (
                       <li
                         key={artist.cat}

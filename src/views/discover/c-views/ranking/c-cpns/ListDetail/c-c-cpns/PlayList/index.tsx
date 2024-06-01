@@ -15,14 +15,15 @@ interface Iprops {
 
 const PlayList: FC<Iprops> = ({ itemdata, trackCount, playCount }) => {
   const dispatch = useAppDispatch()
+
+  //播放
   function handlePlayClick(id: number) {
     dispatch(fetchCurrentSongAction(id))
   }
-  //播放
   const navigate = useNavigate()
   function handNameClick(id: number) {
-    dispatch(fetchCurrentSongAction(id))
     navigate(`/discover/player`)
+    dispatch(fetchCurrentSongAction(id))
   }
   //歌手
   function handleClick(id: number) {
@@ -99,7 +100,6 @@ const PlayList: FC<Iprops> = ({ itemdata, trackCount, playCount }) => {
                       {item.ar
                         .filter((item: any, index: number) => index < 2)
                         .map((value: any, index: number) => {
-                          console.log(value)
                           return (
                             <span key={value.id} className="text">
                               <span onClick={() => handleClick(value.id)}>
